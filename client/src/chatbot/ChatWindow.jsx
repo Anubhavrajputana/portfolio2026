@@ -16,7 +16,7 @@ import chatbotData from "./chatbotData";
 // Vite
 const BACKEND_URL =
   import.meta.env.VITE_BACKEND_URL ||
-  "http://localhost:5000";
+  import.meta.env.VITE_API_BASE_URL;
 
 // CRA fallback (optional)
 const API =
