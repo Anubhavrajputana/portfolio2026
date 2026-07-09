@@ -1,0 +1,389 @@
+/* ==========================================
+   CERTIFICATIONS SECTION
+========================================== */
+
+.certifications-section {
+  position: relative;
+  padding: 120px 20px;
+  background: linear-gradient(
+    180deg,
+    #020617 0%,
+    #07111f 45%,
+    #0f172a 100%
+  );
+  overflow: hidden;
+}
+
+.certifications-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.certifications-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cert-badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #38bdf8;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.certifications-header h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.certifications-header p {
+  max-width: 720px;
+  margin: auto;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.cert-card {
+  position: relative;
+  padding: 28px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  overflow: hidden;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(56, 189, 248, 0.4);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(56, 189, 248, 0.18);
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.cert-icon {
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+  );
+
+  color: #ffffff;
+  font-size: 1.8rem;
+
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.cert-card h3 {
+  color: #ffffff;
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+}
+
+/* ==========================================
+   META
+========================================== */
+
+.cert-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.cert-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(37, 99, 235, 0.12);
+
+  color: #cbd5e1;
+
+  font-size: 0.88rem;
+}
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.cert-card p {
+  color: #94a3b8;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.cert-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #06b6d4
+  );
+
+  color: #ffffff;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cert-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 30px rgba(37, 99, 235, 0.35);
+}
+/* ==========================================
+   PREMIUM BACKGROUND GLOW
+========================================== */
+
+.certifications-section::before,
+.certifications-section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.certifications-section::before {
+  width: 300px;
+  height: 300px;
+  top: -120px;
+  left: -100px;
+  background: rgba(37, 99, 235, 0.18);
+}
+
+.certifications-section::after {
+  width: 340px;
+  height: 340px;
+  bottom: -140px;
+  right: -120px;
+  background: rgba(139, 92, 246, 0.18);
+}
+
+/* ==========================================
+   CARD GLOW EFFECT
+========================================== */
+
+.cert-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.18),
+    rgba(6, 182, 212, 0.12),
+    rgba(139, 92, 246, 0.18)
+  );
+
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: -1;
+}
+
+.cert-card:hover::before {
+  opacity: 1;
+}
+
+.cert-card:hover {
+  transform: translateY(-10px) scale(1.015);
+}
+
+/* ==========================================
+   ICON ANIMATION
+========================================== */
+
+.cert-icon {
+  animation: certPulse 2.8s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+@keyframes certPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(37, 99, 235, 0.35),
+      0 0 32px rgba(6, 182, 212, 0.2);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(37, 99, 235, 0.5),
+      0 0 48px rgba(6, 182, 212, 0.35);
+  }
+}
+
+/* ==========================================
+   META BADGES
+========================================== */
+
+.cert-meta span {
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.cert-meta span:hover {
+  background: #2563eb;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   BUTTON POLISH
+========================================== */
+
+.cert-button:hover {
+  box-shadow:
+    0 12px 35px rgba(37, 99, 235, 0.35),
+    0 0 20px rgba(6, 182, 212, 0.2);
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+  .certifications-section {
+    padding: 90px 18px;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .cert-card {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .cert-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .cert-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .cert-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications-section {
+    padding: 80px 16px;
+  }
+
+  .certifications-header h2 {
+    font-size: 2rem;
+  }
+
+  .cert-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cert-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION SUPPORT
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-icon,
+  .cert-card,
+  .cert-card::before,
+  .cert-button {
+    animation: none !important;
+    transition: none !important;
+  }
+}

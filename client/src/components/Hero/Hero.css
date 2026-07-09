@@ -1,0 +1,512 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.18), transparent 35%),
+    linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
+  display: flex;
+  align-items: center;
+  padding: 120px 24px 60px;
+}
+
+.hero-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 4rem;
+}
+
+/* =========================
+   BACKGROUND GLOW ORBS
+========================= */
+
+.hero-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 320px;
+  height: 320px;
+  top: -100px;
+  left: -80px;
+  background: rgba(37, 99, 235, 0.35);
+}
+
+.orb-2 {
+  width: 260px;
+  height: 260px;
+  bottom: -60px;
+  right: -40px;
+  background: rgba(168, 85, 247, 0.35);
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.hero-left {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #93c5fd;
+  backdrop-filter: blur(12px);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+  min-height: 50px;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  color: #cbd5e1;
+  margin-bottom: 18px;
+}
+
+.cursor {
+  color: #38bdf8;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero p {
+  max-width: 620px;
+  color: #94a3b8;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   CTA BUTTONS
+========================= */
+
+.hero-buttons {
+  margin-top: 34px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: all 0.35s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.45);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  border-color: #38bdf8;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.hero-socials {
+  margin-top: 28px;
+  display: flex;
+  gap: 18px;
+}
+
+.hero-socials a {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-4px) rotate(6deg);
+  background: linear-gradient(135deg, #2563eb, #8b5cf6);
+}
+/* ==========================================
+   RIGHT SIDE - PREMIUM PROFILE CARD
+========================================== */
+
+.hero-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.profile-card {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(56, 189, 248, 0.15);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-8px) rotate(1deg);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 0 45px rgba(56, 189, 248, 0.3);
+}
+
+/* Animated border glow */
+
+.profile-card::before {
+  content: "";
+
+  position: absolute;
+  inset: -2px;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.8),
+    rgba(139, 92, 246, 0.8),
+    rgba(6, 182, 212, 0.8)
+  );
+
+  z-index: -2;
+
+  filter: blur(30px);
+
+  opacity: 0.7;
+}
+
+.profile-card::after {
+  content: "";
+
+  position: absolute;
+  inset: 1px;
+
+  border-radius: inherit;
+
+  background: rgba(15, 23, 42, 0.92);
+
+  z-index: -1;
+}
+
+/* ==========================================
+   PROFILE CIRCLE
+========================================== */
+
+.profile-circle {
+  width: 160px;
+  height: 160px;
+
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3rem;
+  font-weight: 800;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed,
+    #06b6d4
+  );
+
+  box-shadow:
+    0 0 30px rgba(37, 99, 235, 0.45),
+    0 0 60px rgba(139, 92, 246, 0.3);
+
+  animation: profileFloat 4s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ==========================================
+   FLOATING TECH ICONS
+========================================== */
+
+.floating-icons {
+  position: absolute;
+  inset: 0;
+}
+
+.floating-icons svg {
+  position: absolute;
+
+  font-size: 2rem;
+
+  color: white;
+
+  transition:
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.floating-icons svg:hover {
+  transform: scale(1.3);
+  color: #38bdf8;
+}
+
+/* React */
+.floating-icons svg:nth-child(1) {
+  top: 8%;
+  left: 50%;
+  animation: float1 4s ease-in-out infinite;
+}
+
+/* Node */
+.floating-icons svg:nth-child(2) {
+  right: 12%;
+  top: 24%;
+  animation: float2 5s ease-in-out infinite;
+}
+
+/* Express */
+.floating-icons svg:nth-child(3) {
+  bottom: 20%;
+  right: 10%;
+  animation: float3 6s ease-in-out infinite;
+}
+
+/* MongoDB */
+.floating-icons svg:nth-child(4) {
+  bottom: 8%;
+  left: 50%;
+  animation: float2 5s ease-in-out infinite;
+}
+
+/* HTML */
+.floating-icons svg:nth-child(5) {
+  bottom: 22%;
+  left: 12%;
+  animation: float1 4.5s ease-in-out infinite;
+}
+
+/* CSS */
+.floating-icons svg:nth-child(6) {
+  left: 8%;
+  top: 25%;
+  animation: float3 5.5s ease-in-out infinite;
+}
+
+/* JS */
+.floating-icons svg:nth-child(7) {
+  top: 48%;
+  right: -2%;
+  animation: float2 4.2s ease-in-out infinite;
+}
+
+@keyframes float1 {
+  0%,100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes float2 {
+  0%,100% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes float3 {
+  0%,100% {
+    transform: translate(-2px, 0px);
+  }
+
+  50% {
+    transform: translate(8px, -10px);
+  }
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-left {
+    order: 2;
+  }
+
+  .hero-right {
+    order: 1;
+    margin-bottom: 40px;
+  }
+
+  .hero-buttons,
+  .hero-socials {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+  }
+
+  .profile-card {
+    width: 300px;
+    height: 300px;
+  }
+
+  .profile-circle {
+    width: 130px;
+    height: 130px;
+    font-size: 2.2rem;
+  }
+
+  .floating-icons svg {
+    font-size: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.3rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    width: 260px;
+    height: 260px;
+  }
+
+  .profile-circle {
+    width: 110px;
+    height: 110px;
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
